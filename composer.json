@@ -1,0 +1,12 @@
+{
+    "name": "bank_system/bank",   
+    "autoload": {
+        "psr-4": {           
+            "Src\\": "src/"
+        }
+    },
+    "authors": [{
+        "name": "João Victor Cordeiro",
+        "email": "joaocordeiro2134@gmail.com"
+    }]
+}
