@@ -31,12 +31,31 @@ namespace Src\Routes
         /**
          * Rota default do sistema, no qual é apresentadas todas as informações ao usuário caso ele esteja logado
          */
-        protected function home(): void { (new BankController)->renderHome(); }
+        protected function home(): void { (new BankController())->renderHome(); }
 
         /**
          * Rota de login do sistema
          */
-        protected function login(): void { (new BankController)->renderLogin(); }
+        protected function login(): void { (new BankController())->renderLogin(); }
+
+
+        /**
+         * Rota de autenticação do sistema
+         */
+        protected function auth(): void { (new BankController())->authentication(); }
+
+        
+        /**
+         * Rota de depósito e saque do sistema
+         */
+        protected function deposit(): void { (new BankController())->operations('deposit'); }    
+        protected function withdraw(): void { (new BankController())->operations('withdraw'); }
+
+
+        /**
+         * Rota para resgatar o log de transações do usuário
+         */
+        protected function getLog(): void { (new BankController())->operations('getlog'); }    
 
 
         /**

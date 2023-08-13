@@ -1,0 +1,22 @@
+#grid-login{
+  max-width: 600px;
+  margin: auto;
+}
+
+.operations{
+  display: flex;
+}
+
+.operations button{
+  margin: 5px;
+}
+
+.swal2-popup{
+  max-width: 500px !important;
+}
+
+#logout{
+  float: right;
+  font-size: 13pt;
+  margin-top: 15px;
+}

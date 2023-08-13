@@ -1,1 +1,51 @@
-<h1>Login</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{head}}
+
+    <title>Bank - Login</title>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    {{nav}}
+    <!-- ./ Nav -->
+
+    <!-- Main -->
+    <main class="container">
+        <article class="grid" id="grid-login">
+            <div>
+                <hgroup>
+                    <h1>Sign in</h1>
+                    <h2>Bank System</h2>
+                </hgroup>
+                <form>
+                    <input type="text" name="account_number" id="account_number" placeholder="Account" aria-label="Account" autocomplete="nickname" required onfocus="this.style.border = '1px solid lightgray'"/>
+                    <input type="password" name="account_pass" id="account_pass" placeholder="Password" aria-label="Password" autocomplete="current-password" required onfocus="this.style.border = '1px solid lightgray'"/>
+                    <fieldset>
+                        <label for="remember">
+                            <input type="checkbox" role="switch" id="remember" name="remember" />
+                            Remember me
+                        </label>
+                    </fieldset>
+                    <button type="button" class="contrast" onclick="callLogin()">Login</button>
+                </form>
+            </div>          
+        </article>
+    </main>
+    <!-- ./ Main -->
+
+    <!-- Footer -->
+    {{footer}}
+    <!-- ./ Footer -->
+    
+    <!-- Minimal theme switcher -->
+    <script src="public/Assets/js/minimal-theme-switcher.js"></script>
+
+    <!-- Scripts -->
+    <script src="public/Assets/js/main.js"></script>
+</body>
+
+</html>

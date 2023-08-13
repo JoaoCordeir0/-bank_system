@@ -1,1 +1,123 @@
-<h1>Home</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{head}}
+
+    <title>Bank - Home</title>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    {{nav}}
+    <!-- ./ Nav -->
+
+    <!-- Main -->
+    <main class="container">
+        <article class="grid" id="grid-home">
+            <div>
+                <hgroup>
+                    <h1> Hello {{user_name}} <a href="#Logout" onclick="logout()" id="logout">Logout <i
+                                class="fas fa-sign-out-alt"></i></a> </h1>
+                    <br>
+                    <h2> Current balance: {{user_balance}} </h2>
+                </hgroup>
+
+                <div class="operations">
+                    <button type="button" class="contrast" data-target="modal-withdraw" onClick="toggleModal(event)">
+                        <i class="fas fa-sort-amount-down"></i> Withdraw
+                    </button>
+                    <button type="button" class="contrast" data-target="modal-deposit" onClick="toggleModal(event)">
+                        <i class="fas fa-sort-amount-up"></i> Deposit
+                    </button>
+                    <button type="button" class="contrast" data-target="modal-historic"
+                        onClick="toggleModal(event), loadLog('{{user_id}}')">
+                        <i class="fas fa-align-left"></i> Historic
+                    </button>
+                </div>
+            </div>
+        </article>
+    </main>
+    <!-- ./ Main -->
+
+    <!-- Modal deposit -->
+    <dialog id="modal-deposit">
+        <article>
+            <a href="#close" aria-label="Close" class="close" data-target="modal-deposit" onClick="toggleModal(event)">
+            </a>
+            <h3>Enter the deposit amount:</h3>
+            <form>
+                <input type="text" name="amount_deposit" id="amount_deposit"
+                    onfocus="this.style.border = '1px solid lightgray'">
+            </form>
+            <footer>
+                <a href="#cancel" role="button" class="secondary" data-target="modal-deposit"
+                    onClick="toggleModal(event)">
+                    Cancel
+                </a>
+                <a href="#confirm" role="button" data-target="modal-deposit" onClick="deposit('{{user_id}}')">
+                    Confirm deposit
+                </a>
+            </footer>
+        </article>
+    </dialog>
+
+    <!-- Modal withdraw -->
+    <dialog id="modal-withdraw">
+        <article>
+            <a href="#close" aria-label="Close" class="close" data-target="modal-withdraw" onClick="toggleModal(event)">
+            </a>
+            <h3>Enter withdrawal amount:</h3>
+            <form>
+                <input type="text" name="amount_withdraw" id="amount_withdraw"
+                    onfocus="this.style.border = '1px solid lightgray'">
+            </form>
+            <footer>
+                <a href="#cancel" role="button" class="secondary" data-target="modal-withdraw"
+                    onClick="toggleModal(event)">
+                    Cancel
+                </a>
+                <a href="#confirm" role="button" data-target="modal-withdraw" onClick="withdraw('{{user_id}}')">
+                    Confirm withdraw
+                </a>
+            </footer>
+        </article>
+    </dialog>
+
+    <!-- Modal historic -->
+    <dialog id="modal-historic">
+        <article>
+            <a href="#close" aria-label="Close" class="close" data-target="modal-historic" onClick="toggleModal(event)">
+            </a>
+            <h3>Complete transaction history:</h3>
+            <table>
+                <thead>
+                    <td>Action</td>
+                    <td>Date</td>
+                </thead>
+                <tbody id="tbody-log">
+
+                </tbody>
+            </table>
+            <footer>
+                <a href="#cancel" role="button" class="secondary" data-target="modal-historic"
+                    onClick="toggleModal(event)">
+                    Close
+                </a>
+            </footer>
+        </article>
+    </dialog>
+
+    <!-- Footer -->
+    {{footer}}
+    <!-- ./ Footer -->
+
+    <!-- Minimal theme switcher -->
+    <script src="public/Assets/js/minimal-theme-switcher.js"></script>
+
+    <!-- Scripts -->
+    <script src="public/Assets/js/main.js"></script>
+</body>
+
+</html>
