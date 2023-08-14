@@ -1,6 +1,6 @@
 ## Manual de como rodar o projeto local
 
-> João Victor Cordeiro - 01/08/2023
+> João Victor Cordeiro - 13/08/2023
 
 #
 
