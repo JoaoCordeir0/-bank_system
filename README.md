@@ -19,6 +19,11 @@ Rodar o projeto:
 
 * Para rodar o projeto após instalar as dependências basta rodar o seguinte comando: *"php -S localhost:9090"*
 
+Banco de dados:
+
+* O backup e schema do banco de dados estão na pasta "db" do projeto, basta rodar os scripts para restaurar o banco.
+* Caso necessite, ajuste a conexão do banco no arquivo: *"src/core/database.php"*
+
 Credenciais de acesso para teste:
 
 * Account: 08344-6
